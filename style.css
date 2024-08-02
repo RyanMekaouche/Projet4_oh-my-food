@@ -12,8 +12,8 @@ body {
 }
 
 #gradient-vertical {
-  --color-stop-1:#9356DC;
-  --color-stop-2:#FF79DA;
+  --color-stop-1: #9356DC;
+  --color-stop-2: #FF79DA;
 }
 
 .flex-center {
@@ -29,17 +29,10 @@ body {
   text-align: center;
 }
 
-.background-gray {
-  background-color: #F6F6F6;
-}
-
-h2, h3 {
+h2,
+h3 {
   font-size: 28px;
   padding-top: 30px;
-  margin: 0;
-}
-
-h4 {
   margin: 0;
 }
 
@@ -47,7 +40,8 @@ h4 {
   margin-top: 40px;
 }
 
-.margin-left, .margin-left_title {
+.margin-left,
+.margin-left_title {
   margin-left: 20px;
 }
 
@@ -76,14 +70,6 @@ a {
 }
 
 /*HEADER*/
-.header__arrow {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  top: 39px;
-  left: 18px;
-}
-
 .header__logo {
   width: 220px;
   margin-top: 20px;
@@ -113,6 +99,7 @@ a {
   border-radius: 30px;
   margin-bottom: 50px;
   transition: 300ms;
+  border: white;
 }
 .cta__button:hover {
   opacity: 0.9;
@@ -120,9 +107,9 @@ a {
   transform: scale(1.02);
 }
 
-.cta__button--color {
+.cta__button_txt {
   color: white;
-  font-weight: 500px;
+  font-size: 16px;
 }
 
 /*Fonctionnement*/
@@ -135,6 +122,7 @@ a {
 }
 .fonctionnement img {
   width: 15px;
+  margin-left: 10px;
 }
 
 .fonctionnement__button {
@@ -195,6 +183,10 @@ a {
   display: none;
 }
 
+.restaurant__card {
+  position: relative;
+}
+
 .restocard {
   justify-content: center;
   display: flex;
@@ -209,23 +201,21 @@ a {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-
-.restocard__info {
+.restocard .restocard__info {
   display: flex;
   justify-content: space-between;
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  padding: 10px 0px;
 }
-
-.restocard__info_title {
+.restocard .restocard__info_title {
   font-size: large;
   padding: 0;
   margin-top: 10px;
 }
-
-.restocard__info_txt {
+.restocard .restocard__info_txt {
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -243,6 +233,11 @@ a {
   right: 20px;
 }
 
+.heart__position {
+  position: relative;
+  top: 30px;
+}
+
 .restocard__nouveau_badge {
   padding: 20px;
   background-color: #99E2D0;
@@ -251,26 +246,25 @@ a {
   font-weight: 500;
 }
 
-.heart__position {
-  position: relative;
-  top: 30px;
-}
-
 .heart__check {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70px;
-  height: 58px;
   overflow: hidden;
-  gap: 5px;
-  line-height: 0;
+  width: 70px;
+  height: 50px;
+}
+
+.heart__check_position {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
 }
 
 .heart__input {
   z-index: 100;
   flex-direction: column;
-  height: 20px;
+  height: 40px;
   width: 20px;
   opacity: 0;
 }
@@ -312,28 +306,23 @@ a {
   font-size: 16px;
   cursor: pointer;
 }
-
-.footer__logo {
+.footer .footer__icones {
+  display: flex;
+  flex-direction: row;
+}
+.footer .footer__icones img {
+  width: 12px;
+}
+.footer .footer__link {
+  margin: 5px;
+}
+.footer .footer__logo {
   width: 180px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
-.footer__icones {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-.footer__icones img {
-  width: 12px;
-}
-
-.footer__logo_dekstop {
+.footer .footer__dekstop_logo {
   display: none;
-}
-
-.footer__link {
-  margin: 5px;
 }
 
 @media (min-width: 1024px) {
@@ -350,7 +339,6 @@ a {
     width: 100%;
   }
   .all__restocard {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -365,7 +353,6 @@ a {
     display: block;
   }
   .restocard {
-    justify-content: center;
     display: flex;
     flex-direction: column;
     padding: 20px 20px;
@@ -378,7 +365,8 @@ a {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
-  .restaurant__card_width {
+  .restaurant__card {
+    position: relative;
     width: 38%;
   }
   .padding__left_dekstop {
@@ -388,6 +376,7 @@ a {
     margin-left: 0px;
   }
   /*Fonctionnement*/
+  
   .fonctionnement {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -404,12 +393,6 @@ a {
     width: 180px;
     margin-right: 80px;
   }
-  .fonctionnement__button_flex {
-    z-index: 2;
-    padding: 10px;
-    border-radius: 25px;
-    filter: drop-shadow(0px 2px 5px rgba(7, 7, 7, 0.2));
-  }
   .fonctionnement__button {
     display: flex;
     align-items: center;
@@ -420,40 +403,55 @@ a {
     color: black;
     height: 70px;
   }
+  .fonctionnement__button_flex {
+    z-index: 2;
+    padding: 10px;
+    border-radius: 25px;
+    filter: drop-shadow(0px 2px 5px rgba(7, 7, 7, 0.2));
+  }
+  .heart__check_position {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+  }
   /*footer*/
   .footer {
-    background-color: #353535;
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 15px;
-    align-items: center;
     padding-top: 60px;
     padding-right: 10px;
     padding-bottom: 10px;
   }
-  .footer__logo {
+  .footer .footer__logo {
     margin-left: 60px;
     padding: 0;
   }
-  .footer__link {
+  .footer .footer__link {
     margin: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .footer .footer__dekstop_margin {
+    margin-left: 35px;
+  }
+  .footer .footer__dekstop_logo {
+    margin-left: 90px;
+    display: block;
   }
   .logo__mobile {
     display: none;
   }
-  .footer__logo_dekstop {
-    margin-left: 90px;
-    display: block;
-  }
-  .footer__service_dekstop {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-right: 30px;
-  }
 }
 /*header menu*/
+.header__arrow {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  top: 40px;
+  left: 20px;
+}
+
 .headmenu__background {
   background-color: white;
 }
@@ -466,6 +464,11 @@ a {
   z-index: 2;
 }
 
+.headmenu__image_position {
+  position: relative;
+  top: 35px;
+}
+
 .headmenu__title {
   font-family: "shrikhand", serif;
   font-size: 28px;
@@ -474,8 +477,6 @@ a {
 /*section menu*/
 .headmenu__logo {
   width: 230px;
-  margin-top: 0px;
-  margin-bottom: 20px;
 }
 
 .title__heart {
@@ -498,13 +499,12 @@ a {
 
 .menu__background {
   background-color: #F6F6F6;
-  border-radius: 60px;
+  border-radius: 40px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
   z-index: 3;
   width: 100%;
   position: relative;
-  bottom: 45px;
 }
 
 .menu__contain {
@@ -593,6 +593,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  .headmenu__image_position {
+    top: 10px;
+  }
+  /*section menu*/
   .title__heart {
     display: flex;
     flex-direction: row;
@@ -623,29 +627,23 @@ a {
     position: relative;
     top: 20px;
   }
-  .background-gray {
-    background-color: white;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
   .check {
     background-color: #99e2D0;
     margin-right: -60px;
     width: 60px;
-  }
-  .price {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-  }
-  .menu__card_price {
-    margin-right: 5px;
   }
   .check__image {
     position: relative;
     top: 26px;
     left: 18px;
     width: 23px;
+  }
+  .menu__card_price {
+    margin-right: 5px;
+  }
+  .price {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
   }
 }/*# sourceMappingURL=style.css.map */
