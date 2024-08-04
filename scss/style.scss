@@ -128,13 +128,11 @@ a {
 
 .fonctionnement {
   @include flex-column;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 0px 50px 0px;
   gap: 25px;
 
   img {
     width: 15px;
-    margin-left: 10px;
   }
 }
 
@@ -144,18 +142,16 @@ a {
   width: 80%;
   border-radius: 25px;
   filter: drop-shadow(0px 2px 5px rgba(7, 7, 7, 0.2));
-}
-
-.fonctionnement__button_flex {
   display: flex;
   align-items: center;
   height: 70px;
-  gap: 25px;
+  gap: 20px;
   background-color: $light-grey;
   color: black;
 }
 
 .fonctionnement__round {
+  background-color: #9356DC;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,17 +159,18 @@ a {
   position: relative;
   top: 25px;
   left: 10px;
-  background-color: #9356DC;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   padding: 10px;
   border-radius: 50%/50%;
+
+  p {
+    color: $white;
+    font-size: 14px;
+  }
 }
 
-.fonctionnement__round_number {
-  color: $white;
-  font-size: 14px;
-}
+
 
 /*Restaurants*/
 
@@ -236,30 +233,30 @@ a {
   }
 }
 
-.restocard__nouveau {
+.restocard__new {
   display: flex;
   justify-content: end;
   line-height: 0px;
   height: 0px;
 }
 
-.restocard__nouveau_position {
+.restocard__new_position {
   position: relative;
   top: 10px;
   right: 20px;
 }
 
-.heart__position {
-  position: relative;
-  top: 30px;
-}
-
-.restocard__nouveau_badge {
+.restocard__new_badge {
   padding: 20px;
   background-color: $light-green;
   color: #008766;
   align-items: center;
   font-weight: 500;
+}
+
+.heart__position {
+  position: relative;
+  top: 30px;
 }
 
 .heart__check {
@@ -338,8 +335,7 @@ a {
 
   .footer__logo {
     width: 180px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 10px 0px 10px 0px;
   }
 
   .footer__dekstop_logo {
@@ -388,20 +384,17 @@ a {
 
     img {
       margin-top: 0px;
-      object-fit: cover;
       height: 250px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
     }
   }
 
   .restaurant__card {
     position: relative;
-    width: 40%;
+    width: 35%;
   }
 
   .padding__left_dekstop {
-    padding-left: 15%;
+    padding-left: 18%;
   }
 
   .margin-left_title {
@@ -412,35 +405,23 @@ a {
 
   .fonctionnement {
     display: grid;
-    justify-content: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 50px 0px 20px 0px;
     grid-template-columns: 24% 24% 24%;
-    padding-bottom: 30px;
-    padding-top: 40px;
-    padding-right: 80px;
-    gap: 0px;
+    gap: 20px;
+    margin-left: 17%;
   }
 
   .fonctionnement__txt {
     width: 180px;
-    margin-right: 80px;
   }
 
   .fonctionnement__button {
     display: flex;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 0px;
-    width: 90%;
-    background-color: $light-grey;
+    justify-content: start;
+    width: 100%;
     color: black;
-    height: 70px;
-  }
-
-  .fonctionnement__button_flex {
-    z-index: 2;
     padding: 10px;
+    padding-left: 30px;
     border-radius: 25px;
     filter: drop-shadow(0px 2px 5px rgba(7, 7, 7, 0.2));
   }
@@ -585,7 +566,7 @@ a {
   width: 90%;
 }
 
-.menu__card_plat {
+.menu__card_meal {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
