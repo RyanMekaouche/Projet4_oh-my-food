@@ -8,6 +8,7 @@ $white: white;
 $light-green: #99E2D0;
 
 /*Mixin*/
+
 @mixin flex-row {
   display: flex;
   flex-direction: row;
@@ -105,6 +106,7 @@ a {
 }
 
 .cta__button {
+  position: relative;
   border: $white;
   @include linear-purple;
   padding: 15px;
@@ -112,6 +114,7 @@ a {
   border-radius: 30px;
   margin-bottom: 50px;
   transition: all 300ms;
+
 
   &:hover {
     opacity: 0.9;
@@ -149,6 +152,7 @@ a {
   gap: 20px;
   background-color: $light-grey;
   color: black;
+  transition: 0.2s;
 }
 
 .fonctionnement__round {
@@ -255,7 +259,7 @@ a {
 
 .heart__position {
   position: relative;
-  top: 30px;
+  top: 25px;
 }
 
 .heart__check {
@@ -274,9 +278,8 @@ a {
 
 .heart__input {
   flex-direction: column;
-  z-index: 100;
-  height: 40px;
-  width: 20px;
+  height: 20px;
+  width: 40px;
   opacity: 0;
 }
 
@@ -287,12 +290,6 @@ a {
   -webkit-text-fill-color: transparent;
   text-align: center;
   display: none !important;
-  z-index: 10;
-}
-
-.fa-regular {
-  cursor: pointer;
-  z-index: 10;
 }
 
 .heart__input:checked+.fa-solid {
@@ -306,7 +303,7 @@ a {
 .footer {
   background-color: $medium-grey;
   @include flex-column;
-  padding-left: 20px;
+  padding: 20px;
 
   a {
     color: $white;
@@ -342,7 +339,47 @@ a {
   }
 }
 
-@media (min-width: 1024px) {
+/* Loading spinner */
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $Primary-color;
+  z-index: 999;
+  opacity: 1;
+  animation: loading 1.5s normal forwards;
+
+  &::before {
+    content: "";
+    border: 10px solid lightgray;
+    border-radius: 50%;
+    border-top: 10px solid white;
+    width: 60px;
+    height: 60px;
+    animation: rotate 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes loading {
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
   /*index version dekstop*/
 
   .title__homepage {
@@ -412,6 +449,12 @@ a {
 
   .fonctionnement__txt {
     width: 180px;
+    transition: 0.2s;
+  }
+
+  .fonctionnement__button:hover .fonctionnement__txt {
+    transition: 0.2s;
+    color: $Primary-color;
   }
 
   .fonctionnement__button {
@@ -421,6 +464,17 @@ a {
     padding: 10px;
     padding-left: 30px;
     border-radius: 25px;
+    cursor: pointer;
+
+    img {
+      transition: 0.2s;
+      filter: invert(53%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(93%) contrast(89%);
+    }
+
+    &:hover img {
+      transition: 0.2s;
+      filter: invert(44%) sepia(43%) saturate(5717%) hue-rotate(244deg) brightness(92%) contrast(87%);
+    }
   }
 
   .heart__check_position {
@@ -479,7 +533,6 @@ a {
   object-fit: cover;
   width: 100%;
   height: 420px;
-  z-index: 2;
 }
 
 .headmenu__image_position {
@@ -630,7 +683,7 @@ a {
     margin-right: auto;
     margin-left: auto;
     width: 70%;
-    bottom: 0;
+    bottom: 0px;
     padding-top: 30px;
   }
 

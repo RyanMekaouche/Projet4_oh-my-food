@@ -1,4 +1,5 @@
-
+/*Variable*/
+/*Mixin*/
 * {
   box-sizing: border-box;
 }
@@ -79,6 +80,7 @@ a {
 }
 
 .cta__button {
+  position: relative;
   border: white;
   background: linear-gradient(#FF79DA, #9356DC);
   padding: 15px;
@@ -121,6 +123,7 @@ a {
   gap: 20px;
   background-color: #F6F6F6;
   color: black;
+  transition: 0.2s;
 }
 
 .fonctionnement__round {
@@ -175,8 +178,7 @@ a {
 }
 .restocard img {
   margin-top: 0px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 250px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -223,7 +225,7 @@ a {
 
 .heart__position {
   position: relative;
-  top: 30px;
+  top: 25px;
 }
 
 .heart__check {
@@ -243,9 +245,8 @@ a {
 
 .heart__input {
   flex-direction: column;
-  z-index: 100;
-  height: 40px;
-  width: 20px;
+  height: 20px;
+  width: 40px;
   opacity: 0;
 }
 
@@ -256,12 +257,6 @@ a {
   -webkit-text-fill-color: transparent;
   text-align: center;
   display: none !important;
-  z-index: 10;
-}
-
-.fa-regular {
-  cursor: pointer;
-  z-index: 10;
 }
 
 .heart__input:checked + .fa-solid {
@@ -275,7 +270,7 @@ a {
   background-color: #353535;
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
+  padding: 20px;
 }
 .footer a {
   color: white;
@@ -305,7 +300,44 @@ a {
   display: none;
 }
 
-@media (min-width: 1024px) {
+/* Loading spinner */
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9356DC;
+  z-index: 999;
+  opacity: 1;
+  animation: loading 1.5s normal forwards;
+}
+.loading-spinner::before {
+  content: "";
+  border: 10px solid lightgray;
+  border-radius: 50%;
+  border-top: 10px solid white;
+  width: 60px;
+  height: 60px;
+  animation: rotate 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes loading {
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media screen and (min-width: 1024px) {
   /*index version dekstop*/
   .title__homepage {
     font-size: 40px;
@@ -361,6 +393,11 @@ a {
   }
   .fonctionnement__txt {
     width: 180px;
+    transition: 0.2s;
+  }
+  .fonctionnement__button:hover .fonctionnement__txt {
+    transition: 0.2s;
+    color: #9356DC;
   }
   .fonctionnement__button {
     display: flex;
@@ -369,6 +406,15 @@ a {
     padding: 10px;
     padding-left: 30px;
     border-radius: 25px;
+    cursor: pointer;
+  }
+  .fonctionnement__button img {
+    transition: 0.2s;
+    filter: invert(53%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(93%) contrast(89%);
+  }
+  .fonctionnement__button:hover img {
+    transition: 0.2s;
+    filter: invert(44%) sepia(43%) saturate(5717%) hue-rotate(244deg) brightness(92%) contrast(87%);
   }
   .heart__check_position {
     position: absolute;
@@ -414,11 +460,9 @@ a {
 }
 
 .headmenu__image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 420px;
-  z-index: 2;
 }
 
 .headmenu__image_position {
@@ -568,7 +612,7 @@ a {
     margin-right: auto;
     margin-left: auto;
     width: 70%;
-    bottom: 0;
+    bottom: 0px;
     padding-top: 30px;
   }
   .menu__recette {
@@ -597,4 +641,6 @@ a {
     flex-direction: row;
     gap: 5px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
