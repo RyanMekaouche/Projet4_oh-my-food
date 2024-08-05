@@ -1,4 +1,6 @@
 /*Variable*/
+$Primary-color: #9356DC;
+$Second-color: #FF79DA;
 $light-grey: #F6F6F6;
 $medium-grey: #353535;
 $smoke-grey: #EAEAEA;
@@ -6,18 +8,18 @@ $white: white;
 $light-green: #99E2D0;
 
 /*Mixin*/
-@mixin flex-row{
+@mixin flex-row {
   display: flex;
   flex-direction: row;
 }
 
-@mixin flex-column{
+@mixin flex-column {
   display: flex;
   flex-direction: column;
 }
 
-@mixin linear-purple{
-  background: linear-gradient(#FF79DA, #9356DC);
+@mixin linear-purple {
+  background: linear-gradient($Second-color, $Primary-color);
 }
 
 * {
@@ -81,8 +83,7 @@ a {
 
 .header__logo {
   width: 220px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0px 20px 0px;
 }
 
 .header__location {
@@ -110,7 +111,7 @@ a {
   width: 250px;
   border-radius: 30px;
   margin-bottom: 50px;
-  transition: 300ms;
+  transition: all 300ms;
 
   &:hover {
     opacity: 0.9;
@@ -151,7 +152,7 @@ a {
 }
 
 .fonctionnement__round {
-  background-color: #9356DC;
+  background-color: $Primary-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,8 +170,6 @@ a {
     font-size: 14px;
   }
 }
-
-
 
 /*Restaurants*/
 
@@ -282,7 +281,7 @@ a {
 }
 
 .fa-solid {
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  background: -webkit-linear-gradient($Second-color, $Primary-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -419,11 +418,9 @@ a {
     display: flex;
     justify-content: start;
     width: 100%;
-    color: black;
     padding: 10px;
     padding-left: 30px;
     border-radius: 25px;
-    filter: drop-shadow(0px 2px 5px rgba(7, 7, 7, 0.2));
   }
 
   .heart__check_position {
@@ -438,9 +435,7 @@ a {
     flex-direction: row;
     justify-content: flex-end;
     gap: 15px;
-    padding-top: 60px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 60px 10px 10px 0px;
 
     .footer__logo {
       margin-left: 60px;
@@ -448,9 +443,7 @@ a {
     }
 
     .footer__link {
-      margin: 10px;
-      margin-left: 0px;
-      margin-right: 0px;
+      margin: 10px 0px 10px 0px;
     }
 
     .footer__dekstop_margin {
@@ -503,6 +496,7 @@ a {
 
 .headmenu__logo {
   width: 230px;
+  margin-bottom: 25px
 }
 
 .title__heart {
@@ -548,8 +542,7 @@ a {
 }
 
 .menu__padding {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 0px 10px 0px;
 }
 
 .menu__recette {
@@ -568,30 +561,26 @@ a {
 
 .menu__card_meal {
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 0px;
 }
 
 .menu__card_acc {
-  font-size: 19px;
-  margin-top: 10px;
+  font-size: 18px;
   padding-bottom: 10px;
-  margin-bottom: 0;
+  margin: 10px 0px 0px 0px;
 }
 
 .menu__card_price {
   color: $medium-grey;
   font-weight: bold;
-  margin-top: 40px;
-  margin-right: 5px;
-  margin-bottom: 0px;
+  margin: 40px 5px 0px;
 }
 
 .check {
   background-color: $light-green;
   width: 70px;
   margin-right: -70px;
-  transition: 440ms;
+  transition: all 440ms;
 }
 
 .check__image {
@@ -652,7 +641,6 @@ a {
   }
 
   .menu__image {
-    position: relative;
     top: 20px;
   }
 
@@ -663,7 +651,6 @@ a {
   }
 
   .check__image {
-    position: relative;
     top: 26px;
     left: 18px;
     width: 23px;
