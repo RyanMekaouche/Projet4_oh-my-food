@@ -1,5 +1,4 @@
-/*Variable*/
-/*Mixin*/
+
 * {
   box-sizing: border-box;
 }
@@ -109,6 +108,9 @@ a {
 }
 .fonctionnement img {
   width: 15px;
+}
+.fonctionnement .fonctionnement--purple{
+filter : invert(44%) sepia(43%) saturate(5717%) hue-rotate(244deg) brightness(92%) contrast(87%);
 }
 
 .fonctionnement__button {
