@@ -3,8 +3,8 @@ $Primary-color: #9356DC;
 $Second-color: #FF79DA;
 $light-grey: #F6F6F6;
 $medium-grey: #353535;
-$smoke-grey: #EAEAEA;
 $white: white;
+$smoke-grey: #EAEAEA;
 $light-green: #99E2D0;
 
 /*Mixin*/
@@ -556,6 +556,10 @@ a {
   margin-bottom: 25px
 }
 
+.heart__top {
+  margin-top: 9px;
+}
+
 .title__heart {
   @include flex-row;
   justify-content: center;
@@ -563,8 +567,25 @@ a {
   gap: 40px;
 }
 
-.heart__top {
-  margin-top: 9px;
+.starter__transition {
+  animation: appear 1000ms ease-in;
+}
+
+.main__transition {
+  animation: appear 2200ms ease-in;
+}
+
+.dessert__transition {
+  animation: appear 4000ms ease-in;
+}
+
+@keyframes appear {
+  0% {
+      opacity:0;
+  }
+  100% {
+      opacity:1;
+  }
 }
 
 .menu__all {
